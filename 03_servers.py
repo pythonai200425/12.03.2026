@@ -4,9 +4,11 @@ from fastapi import FastAPI, HTTPException
 
 # pip install uvicorn
 # pip install fastapi
-# uvicorn main:app --reload
+# uvicorn 03_servers:app --port 8000 --reload
 # swagger = http://127.0.0.1:8000/items
 # swagger = http://127.0.0.1:8000/docs
+
+# if page not reloaded change the port
 
 
 app = FastAPI()
@@ -23,6 +25,12 @@ def get_items():
     return items
 
 # ---- GET by id ----
+@app.get("/items/{item_id}")
+def get_item_by_id(item_id: int):
+    for item in items:
+        if item["id"] == item_id:
+            return item
+    raise HTTPException(status_code=404, detail=f"Item id={item_id} not found")
 
 # ---- POST create ----
 
@@ -34,3 +42,6 @@ def get_items():
 # update only, if not exist -- error
 
 # ---- DELETE ----
+@app.delete("/items/{item_id}")
+def delete_item_by_id(item_id: int):
+    return {"message": f"item {item_id} deleted"}
