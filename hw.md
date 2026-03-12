@@ -8,6 +8,29 @@ The API you build must manage **books**
 
 <img src="lib1.png" style="width: 50%" />
 
+Example for a book fields:
+
+* `id`
+* `title`
+* `author`
+* `year`
+* `description` optional
+
+You should use **Pydantic models** for validation
+
+Your API should start with an initial list of books stored in memory using a list of dictionaries
+
+Example idea:
+
+```python
+books = [
+    {"id": 1, "title": "The Hobbit", "author": "J.R.R. Tolkien", "year": 1937, "description": "Fantasy novel"},
+    {"id": 2, "title": "1984", "author": "George Orwell", "year": 1949, "description": "Dystopian novel"},
+    {"id": 3, "title": "Clean Code", "author": "Robert C. Martin", "year": 2008, "description": "Software development practices"}
+]
+```
+You should also manage an **auto-increment id** when new books are created.
+
 ## Assignment Description
 
 In this homework, you will build a REST API that supports the main CRUD operations:
@@ -43,6 +66,8 @@ If the `id` does not exist, return an error with status code **404**
 
 Create an endpoint that adds a new record
 
+* `/books`
+
 Requirements:
 
 * accept data from the user
@@ -54,6 +79,8 @@ Requirements:
 
 Create an endpoint that replaces the full object by `id`
 
+* `/books/{id}`
+
 Requirements:
 
 * if the object exists, replace all its fields
@@ -62,6 +89,8 @@ Requirements:
 ### 5. PATCH
 
 Create an endpoint that updates only part of an object by `id`
+
+* `/books/{id}`
 
 Requirements:
 
@@ -73,34 +102,13 @@ Requirements:
 
 Create an endpoint that deletes an object by `id`
 
+* `/books/{id}`
+
 Requirements:
 
 * if the object exists, remove it from the list
 * return a message with the deleted object
 * if the object does not exist, return **404**
-
-Example for a book fields:
-
-* `id`
-* `title`
-* `author`
-* `year`
-* `description` optional
-
-You should use **Pydantic models** for validation
-
-Your API should start with an initial list of books stored in memory using a list of dictionaries.
-
-Example idea:
-
-```python
-books = [
-    {"id": 1, "title": "The Hobbit", "author": "J.R.R. Tolkien", "year": 1937, "description": "Fantasy novel"},
-    {"id": 2, "title": "1984", "author": "George Orwell", "year": 1949, "description": "Dystopian novel"},
-    {"id": 3, "title": "Clean Code", "author": "Robert C. Martin", "year": 2008, "description": "Software development practices"}
-]
-```
-You should also manage an **auto-increment id** when new books are created.
 
 Good luck 🚀
 
