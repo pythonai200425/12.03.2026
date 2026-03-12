@@ -26,7 +26,7 @@ Example idea:
 books = [
     {"id": 1, "title": "The Hobbit", "author": "J.R.R. Tolkien", "year": 1937, "description": "Fantasy novel"},
     {"id": 2, "title": "1984", "author": "George Orwell", "year": 1949, "description": "Dystopian novel"},
-    {"id": 3, "title": "Clean Code", "author": "Robert C. Martin", "year": 2008, "description": "Software development practices"}
+    {"id": 3, "title": "Clean Code", "author": "Robert C. Martin", "year": 2008, "description": "Software dev practices"}
 ]
 ```
 You should also manage an **auto-increment id** when new books are created.
