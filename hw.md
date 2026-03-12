@@ -6,6 +6,8 @@ Create a small **REST API** in **FastAPI** for managing a collection of objects
 
 The API you build must manage **books**
 
+<img src="lib1.png" style="width: 50%" />
+
 ## Assignment Description
 
 In this homework, you will build a REST API that supports the main CRUD operations:
